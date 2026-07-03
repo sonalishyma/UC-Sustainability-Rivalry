@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Other Rivalry — UC Sustainability, Ranked</title>
+<meta name="description" content="UC campuses fight over everything — sports, admit rates, Nobel counts. Here's the rivalry nobody's kept score on: sustainability. Nine campuses, seven real metrics, one league table.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav aria-label="Sections"><div class="wrap">
+  <span class="brand">THE OTHER RIVALRY</span>
+  <div class="links">
+    <a href="#rivalry">The Rivalry</a><a href="#standings">Standings</a><a href="#grid">The Grid</a>
+    <a href="#campus">Campuses</a><a href="#targets">Targets</a><a href="#leed">Buildings</a>
+    <a href="#call">The Point</a><a href="#methods">Methods</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <p class="eyebrow">SYN 100 · UC San Diego Synthesis Program · Team 3</p>
+  <h1>UC CAMPUSES COMPETE OVER<br><span class="gold">EVERYTHING.</span><br><span class="ghost">EXCEPT THIS.</span></h1>
+  <p class="dq">Rivalry week fills stadiums. U.S. News rank gets forwarded in group chats before the ink is dry. Admit rates are a blood sport. So why is there no scoreboard for the one competition that actually affects the planet nine campuses share? We built one.</p>
+  <div class="pillars">
+    <div class="pillar" style="--pc:var(--academics)"><div class="k">Academics</div><div class="v">Ranked obsessively</div><div class="d">US News, admit rates, faculty prestige</div></div>
+    <div class="pillar" style="--pc:var(--athletics)"><div class="k">Athletics</div><div class="v">Ranked obsessively</div><div class="d">Rivalry games, NCAA titles, bragging rights</div></div>
+    <div class="pillar" style="--pc:var(--prestige)"><div class="k">Prestige</div><div class="v">Ranked obsessively</div><div class="d">Nobel laureates, research output, name recognition</div></div>
+    <div class="pillar q"><div class="k">Sustainability</div><div class="v">?</div><div class="d">Until this project, nobody was keeping score</div></div>
+  </div>
+</div></header>
+
+<section id="rivalry"><div class="wrap rev">
+  <p class="eyebrow">The premise</p>
+  <h2>Nine campuses, one competitive DNA</h2>
+  <p class="lede">Every UC campus fights for the same things: the higher rank, the better recruiting class, the bigger name. That instinct is real, it's earned, and it's not a bad thing — it's just never once been pointed at the planet.</p>
+  <div class="rivalry-grid">
+    <div class="rcard" style="--rc:var(--academics)"><span class="tag">Academics</span><h3>The rankings arms race</h3><p>Berkeley and UCLA duel year after year for the title of best public university in the country — and every campus in between quotes its own U.S. News rank the moment it improves.</p></div>
+    <div class="rcard" style="--rc:var(--athletics)"><span class="tag">Athletics</span><h3>The trophy case</h3><p>UCLA alone has stacked up more NCAA team championships than almost any school in the country. Rivalry week isn't a metaphor here — it's a campus holiday.</p></div>
+    <div class="rcard" style="--rc:var(--prestige)"><span class="tag">Prestige</span><h3>The name-drop</h3><p>Nobel laureates, patent counts, admit rates under 10% — the UC system markets its prestige as hard as any Ivy, and every campus wants its own line in that pitch.</p></div>
+    <div class="rcard blank"><span class="tag">Sustainability</span><h3>No trophy. No chant. No scoreboard.</h3><p>Seven real, publicly reported sustainability metrics exist for every campus — buried across nine separate PDFs, with no ranking connecting them. Until now.</p></div>
+  </div>
+  <p class="pull">If UC students can turn a football game into a rivalry, they can turn sustainability into one too.</p>
+</div></section>
+
+<section id="standings" class="alt"><div class="wrap rev">
+  <p class="eyebrow">The scoreboard nobody built — until now</p>
+  <h2>Sum of ranks across all seven metrics. Lowest score wins.</h2>
+  <p class="lede">Each campus was ranked 1–9 on every metric using public UCOP, STARS, and LEED data; the totals below add those seven ranks. A perfect score would be 7.</p>
+  <div class="podium">
+    <div class="pcard win"><div class="place">T-1st · 27 pts</div><div class="who">UC Irvine</div><div class="pts">Top-2 in water, curriculum &amp; waste</div></div>
+    <div class="pcard win"><div class="place">T-1st · 27 pts</div><div class="who">UC Santa Barbara</div><div class="pts">#1 in buildings and emissions</div></div>
+    <div class="pcard"><div class="place">3rd · 28 pts</div><div class="who">UC San Diego</div><div class="pts">#1 in water and curriculum</div></div>
+  </div>
+  <p class="tienote">Two campuses tie for first — by two completely different playbooks. That contrast is the story of this project.</p>
+  <div class="chart-box tall"><canvas id="standingsChart"></canvas></div>
+  <p class="hint">UC San Diego shown in gold as the home campus. Hover any campus in <a href="#grid">the grid below</a> to see the numbers behind each rank.</p>
+</div></section>
+
+<section id="grid"><div class="wrap rev">
+  <p class="eyebrow">The signature view</p>
+  <h2>Every campus leads somewhere</h2>
+  <p class="lede">All 63 ranks in one grid — campuses ordered by total. <strong>Hover any cell</strong> for the real number behind the rank and its source measure; <strong>hover a column header</strong> for how the metric was measured; <strong>click a campus name</strong> to open its profile.</p>
+  <div class="gridwrap"><table class="grid" id="rankGrid" aria-describedby="gridlegend"><tbody id="gridBody">
+    <tr><th class="camp">Campus (total)</th>
+      <th tabindex="0" data-desc="LEED-certified stock, weighted Platinum ×4 / Gold ×3 / Silver ×2 / Certified ×1.">Buildings</th>
+      <th tabindex="0" data-desc="Composite proxy: (Scope 1–3 emissions − renewable energy use) per acre. Lower is better.">Emissions</th>
+      <th tabindex="0" data-desc="Actual energy-use intensity vs the campus's own target.">Energy intensity</th>
+      <th tabindex="0" data-desc="Water use vs the campus's 2025 goal (gallons per capita, as recorded).">Water</th>
+      <th tabindex="0" data-desc="STARS curriculum & campus engagement, % of possible points.">Curriculum</th>
+      <th tabindex="0" data-desc="STARS air/energy & climate, normalized to % of possible (two STARS versions).">Air &amp; climate</th>
+      <th tabindex="0" data-desc="STARS waste score, % of possible points.">Waste</th>
+      <th>Total</th></tr>
+  </tbody></table></div>
+  <div class="legend" id="gridlegend">
+    <span><span class="sw" style="background:#0ca30c"></span>Rank 1 (best)</span>
+    <span><span class="sw" style="background:#fab219"></span>Rank 5</span>
+    <span><span class="sw" style="background:#d03b3b"></span>Rank 9 (worst)</span>
+    <span><span class="sw" style="background:var(--navy)"></span>Total points</span>
+  </div>
+</div></section>
+
+<section id="campus" class="alt"><div class="wrap rev">
+  <p class="eyebrow">Campus profiles</p>
+  <h2>Pick a campus, see its shape</h2>
+  <p class="lede">No campus is good at everything — the shape of the radar is the pattern. Outer edge = better rank on that metric.</p>
+  <div class="chips" id="chips" role="group" aria-label="Choose a campus"></div>
+  <div class="profile-wrap">
+    <div class="profile"><h3 id="profileName">UC San Diego</h3><p class="sub" id="profileSub"></p><div id="profileRows"></div></div>
+    <div class="chart-box med"><canvas id="radarChart"></canvas></div>
+  </div>
+</div></section>
+
+<section id="targets"><div class="wrap rev">
+  <p class="eyebrow">Deep dive 1</p>
+  <h2>Who hits their own targets?</h2>
+  <p class="lede">Each campus sets its own energy-intensity target and water goal, and reports its own emissions footprint. Shown as percent over or under — green means the goal was beaten (or renewables outweighed emissions).</p>
+  <div class="toggle" role="group" aria-label="Choose target metric">
+    <button id="tgEUI" aria-pressed="true">Energy use intensity</button>
+    <button id="tgWater" aria-pressed="false">Water use</button>
+    <button id="tgEmissions" aria-pressed="false">Emissions intensity</button>
+  </div>
+  <div class="dvg" id="dvg"></div>
+  <p class="dnote" id="dnote"></p>
+</div></section>
+
+<section id="leed" class="alt leed"><div class="wrap rev">
+  <p class="eyebrow">Deep dive 2</p>
+  <h2>Building green: the LEED stock</h2>
+  <p class="lede">Certified buildings by tier. The weighted score counts Platinum ×4, Gold ×3, Silver ×2, Certified ×1 — hover any segment for the exact building count.</p>
+  <div class="chart-box tall"><canvas id="leedChart"></canvas></div>
+</div></section>
+
+<section id="adopt"><div class="wrap rev">
+  <p class="eyebrow">What the leaders have in common</p>
+  <h2>Patterns worth adopting</h2>
+  <div class="cards">
+    <div class="card"><h3>Put sustainability in policy, not posters</h3><p>Clear institutional commitments create accountability and guide long-term environmental decisions — the top campuses codify their targets.</p></div>
+    <div class="card"><h3>Build renewable capacity, especially solar</h3><p>On-site renewable generation cuts fossil-fuel dependence and drives down campus greenhouse emissions — the single biggest lever in the emissions metric.</p></div>
+    <div class="card"><h3>Engineer waste out of the system</h3><p>Robust diversion programs minimize landfill use and turn recycling and reuse into default behavior rather than effort.</p></div>
+    <div class="card"><h3>Teach it in the curriculum</h3><p>Integrating climate literacy across programs means graduates carry sustainability into their careers — engagement is a metric because it compounds.</p></div>
+    <div class="card"><h3>Commit to net-zero for the long term</h3><p>Standing carbon-neutrality commitments sustain efficiency and clean-energy investment through leadership and budget cycles.</p></div>
+  </div>
+</div></section>
+
+<section id="call" class="call"><div class="wrap rev">
+  <p class="eyebrow">The point of this whole project</p>
+  <h2>You are the rivalry now.</h2>
+  <p class="lede">UC students have never needed a reason to compete. Give this generation a scoreboard for the thing that actually determines the planet they inherit, and watch how fast nine campuses start playing to win.</p>
+  <div class="bignum-row">
+    <div class="bignum"><div class="num">300K+</div><div class="lab">UC students system-wide, fall 2025 — the largest student body in UC history</div></div>
+    <div class="bignum"><div class="num">9</div><div class="lab">campuses now ranked on sustainability, head to head</div></div>
+    <div class="bignum"><div class="num">7</div><div class="lab">real, public metrics behind every rank</div></div>
+    <div class="bignum"><div class="num">1</div><div class="lab">atmosphere every campus shares, no matter who wins</div></div>
+  </div>
+  <div class="call-cta">
+    <a class="btn primary" href="#standings">See the standings</a>
+    <a class="btn ghost" href="https://github.com/sonalishyma/uc-sustainability-rivalry" target="_blank" rel="noopener">View the source data on GitHub</a>
+  </div>
+</div></section>
+
+<section id="methods" class="methods"><div class="wrap rev">
+  <p class="eyebrow">Methods &amp; honesty notes</p>
+  <h2>How the ranking works — and where to squint</h2>
+  <p><strong>Method.</strong> Nine UC campuses were ranked 1–9 on each of seven metrics from public data; the overall score is the unweighted sum of ranks (lowest wins). Simple by design: transparent, reproducible, and easy to argue with — which is the point of a ranking meant to spark competition.</p>
+  <p><strong>Emissions is a composite proxy.</strong> The score combines Scope 1–3 emissions and renewable-energy use per acre, using each campus's own 2023 sustainability-report figures. It mixes units, so treat it as a rough intensity proxy that orders campuses, not a physical quantity — UCLA's small campus footprint (419 acres) is why its score is such an outlier.</p>
+  <p><strong>STARS air &amp; climate was normalized.</strong> Campuses reported under two different STARS versions (8- vs 16-point sections), so scores were converted to percent-of-possible before ranking — that's why they're comparable.</p>
+  <p><strong>Targets are self-set.</strong> The energy and water metrics measure each campus against its <em>own</em> goal; some 2025 water goals were approximated where no exact figure was published (marked in the grid tooltips). The master ranking used absolute differences; this site displays percentages for cross-campus comparability.</p>
+  <p><strong>The framing is ours.</strong> "The Other Rivalry" is an editorial lens Team 3 added on top of the original research — a way to make nine campuses take a real, sourced sustainability comparison as seriously as they take rank, football, and admit rates. The underlying data and methodology are unchanged from the original study.</p>
+  <ul class="srcs">
+    <li><a href="https://sustainabilityreport.ucop.edu/2025/policy-progress/" target="_blank" rel="noopener">UC Office of the President — Annual Sustainability Report (2025)</a></li>
+    <li><a href="https://www.ucop.edu/sustainability/_files/2024-25-fy-sustainability-rankings-ratings-and-awards.pdf" target="_blank" rel="noopener">UCOP — Sustainability rankings, ratings &amp; awards (FY 2024–25)</a></li>
+    <li><a href="https://reports.aashe.org/" target="_blank" rel="noopener">AASHE STARS public campus reports</a></li>
+    <li><a href="https://www.usgbc.org/articles/top-10-reasons-certify-leed" target="_blank" rel="noopener">USGBC — Why certify with LEED</a></li>
+    <li><a href="https://www.universityofcalifornia.edu/press-room/university-california-sets-enrollment-records" target="_blank" rel="noopener">University of California — fall 2025 systemwide enrollment record (300K+ students)</a></li>
+  </ul>
+</div></section>
+
+<footer><div class="wrap">
+  <p class="who">Team 3 — Sonali S., Rowan N., Raphael P. &amp; Olivia P.</p>
+  <p>SYN 100 · Synthesis Program · UC San Diego</p>
+  <p style="margin-top:10px">Interactive web version, redesign &amp; data pipeline: <span class="gold">Sonali Singh</span>, built from the team's original research dataset.</p>
+</div></footer>
+
+<div id="tip" role="tooltip"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
