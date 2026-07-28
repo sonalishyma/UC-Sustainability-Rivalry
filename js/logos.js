@@ -37,3 +37,17 @@ function badgeHTML(key, size) {
   const glyph = LOGOS[key] || "";
   return `<span class="${cls}" aria-hidden="true"><svg viewBox="0 0 48 48">${glyph}</svg></span>`;
 }
+
+function campusMentionHTML(key, label) {
+  const text = label || (typeof CAMPUSES !== "undefined" && CAMPUSES[key] ? CAMPUSES[key].name : key);
+  return `<span class="campus-mention">${badgeHTML(key, "sm")}<span>${text}</span></span>`;
+}
+
+function hydrateCampusMentions(root) {
+  (root || document).querySelectorAll("[data-campus-logo]").forEach((el) => {
+    if (el.dataset.logoReady) return;
+    const key = el.dataset.campusLogo;
+    el.innerHTML = campusMentionHTML(key, el.textContent.trim());
+    el.dataset.logoReady = "true";
+  });
+}

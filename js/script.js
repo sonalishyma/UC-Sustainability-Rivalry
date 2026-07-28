@@ -11,14 +11,16 @@
   const MUTED = V("--muted"), LINE = V("--line"), INK = V("--ink");
   const GOOD = V("--good"), WARN = V("--warn"), CRIT = V("--crit");
 
-  Chart.defaults.font.family = "Archivo, system-ui, sans-serif";
+  hydrateCampusMentions();
+
+  Chart.defaults.font.family = "'DM Sans', system-ui, sans-serif";
   Chart.defaults.color = INK;
   Chart.defaults.plugins.legend.labels.usePointStyle = true;
   Chart.defaults.plugins.tooltip.backgroundColor = NAVY;
   Chart.defaults.plugins.tooltip.titleColor = GOLD;
   Chart.defaults.plugins.tooltip.bodyColor = "#fff";
   Chart.defaults.plugins.tooltip.padding = 10;
-  Chart.defaults.plugins.tooltip.cornerRadius = 8;
+  Chart.defaults.plugins.tooltip.cornerRadius = 0;
   Chart.defaults.plugins.tooltip.displayColors = false;
 
   /* ---------- color helpers ---------- */
@@ -77,7 +79,7 @@
         layout: { padding: { left: 6, right: 34 } },
         scales: {
           x: { min: 0, max: 50, grid: { color: LINE }, ticks: { stepSize: 10 } },
-          y: { grid: { display: false }, ticks: { font: { weight: 700, family: "Archivo" }, color: NAVY } },
+          y: { grid: { display: false }, ticks: { font: { weight: 700, family: "DM Sans" }, color: NAVY } },
         },
         plugins: {
           legend: { display: false },
@@ -267,7 +269,7 @@
           ? `left:${left}%; transform:translateX(-100%); padding-right:8px; justify-content:flex-end;`
           : `left:${left + half}%; padding-left:8px; justify-content:flex-start;`;
       }
-      return `<div class="drow"><div class="nm">${CAMPUSES[v.k].name}</div>
+      return `<div class="drow"><div class="nm">${campusMentionHTML(v.k)}</div>
         <div class="axis"><div class="zero"></div>
           <div class="seg" style="left:${left}%;width:${half}%;background:${color}"></div>
           <div class="${labelClass}" style="${labelStyle}">${label}</div>
