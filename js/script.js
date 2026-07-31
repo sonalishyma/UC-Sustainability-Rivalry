@@ -128,13 +128,13 @@
   function cellTip(e, cell) {
     const camp = cell.dataset.camp, m = cell.dataset.m, rank = RANKS[camp][m];
     const detail = rawDetail(camp, m);
-    showTip(`<div class="t">${CAMPUSES[camp].name} — ${METRICS.find(x=>x.key===m).label}</div>Rank #${rank} of 9 · ${detail}`, e.clientX, e.clientY);
+    showTip(`<div class="t">${CAMPUSES[camp].name}: ${METRICS.find(x=>x.key===m).label}</div>Rank #${rank} of 9 · ${detail}`, e.clientX, e.clientY);
   }
   function rawDetail(camp, m) {
     const r = RAW[m][camp];
     switch (m) {
       case "buildings": return `weighted score ${r.score} (${r.platinum}P / ${r.gold}G / ${r.silver}S / ${r.certified}C, ${r.total} buildings)`;
-      case "emissions": return `composite intensity score ${r.score.toFixed(1)} (scope 1–3: ${r.scope.toLocaleString()}, renewables: ${r.renewable.toLocaleString()}, ${r.acres.toLocaleString()} acres)`;
+      case "emissions": return `composite intensity score ${r.score.toFixed(1)} (scope 1 to 3: ${r.scope.toLocaleString()}, renewables: ${r.renewable.toLocaleString()}, ${r.acres.toLocaleString()} acres)`;
       case "eui": { const d = r.actual - r.target; return `target ${r.target} → actual ${r.actual} (${d > 0 ? "+" : ""}${d} vs goal)`; }
       case "water": return `goal ${r.goal.toLocaleString()} → actual ${r.actual.toLocaleString()} gal/capita${r.approx ? " (goal approximated)" : ""}`;
       case "curriculum": return `STARS curriculum score ${(r * 100).toFixed(1)}%`;
@@ -201,7 +201,7 @@
               borderWidth: 2, pointRadius: 4, pointBackgroundColor: NAVY2,
             },
             {
-              label: "9-campus average",
+              label: "9 campus average",
               data: avgData,
               borderColor: MUTED, backgroundColor: "rgba(93,110,136,.08)",
               borderWidth: 2, borderDash: [4, 3], pointRadius: 3, pointBackgroundColor: MUTED,
@@ -229,18 +229,18 @@
   /* ================= TARGETS deep-dive — diverging bars ================= */
   const TG = {
     eui: {
-      title: "Percent over (+) or under (−) each campus's own energy-use-intensity target.",
+      title: "Percent over (+) or under (−) each campus's own energy use intensity target.",
       values: ORDER.slice()
         .map((k) => ({ k, pct: ((RAW.eui[k].actual - RAW.eui[k].target) / RAW.eui[k].target) * 100 }))
         .sort((a, b) => a.pct - b.pct),
     },
     water: {
-      title: "Percent over (+) or under (−) each campus's own 2025 water-use goal (gallons per capita).",
+      title: "Percent over (+) or under (−) each campus's own 2025 water use goal (gallons per capita).",
       values: ORDER.slice().sort((a, b) => (RAW.water[a].diff / RAW.water[a].goal) - (RAW.water[b].diff / RAW.water[b].goal))
         .map((k) => ({ k, pct: (RAW.water[k].diff / RAW.water[k].goal) * 100 })),
     },
     emissions: {
-      title: "Composite emissions-intensity score — (Scope 1–3 emissions − renewable energy use) per acre. Below zero means renewables outweigh the emissions term.",
+      title: "Composite emissions intensity score: Scope 1 to 3 emissions minus renewable energy use per acre. Below zero means renewables outweigh the emissions term.",
       values: ORDER.slice().sort((a, b) => RAW.emissions[a].score - RAW.emissions[b].score)
         .map((k) => ({ k, pct: RAW.emissions[k].score })),
     },

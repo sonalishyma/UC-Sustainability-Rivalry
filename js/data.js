@@ -30,9 +30,9 @@ const RANKS = {
 };
 
 const METRICS = [
-  { key: "buildings",  label: "Buildings",       short: "Bldgs", desc: "LEED-certified stock, weighted Platinum ×4 / Gold ×3 / Silver ×2 / Certified ×1." },
-  { key: "emissions",  label: "Emissions",       short: "Emiss", desc: "Composite proxy: (Scope 1–3 emissions − renewable energy use) per acre. Lower is better." },
-  { key: "eui",        label: "Energy intensity", short: "EUI",   desc: "Actual energy-use intensity vs. the campus’s own target." },
+  { key: "buildings",  label: "Buildings",       short: "Bldgs", desc: "LEED certified stock, weighted Platinum ×4 / Gold ×3 / Silver ×2 / Certified ×1." },
+  { key: "emissions",  label: "Emissions",       short: "Emiss", desc: "Composite proxy: Scope 1 to 3 emissions minus renewable energy use per acre. Lower is better." },
+  { key: "eui",        label: "Energy intensity", short: "EUI",   desc: "Actual energy use intensity versus the campus’s own target." },
   { key: "water",      label: "Water",           short: "Water", desc: "Water use vs. the campus’s 2025 goal (gallons per capita, as recorded)." },
   { key: "curriculum", label: "Curriculum",      short: "Curric", desc: "STARS curriculum & campus engagement, % of possible points." },
   { key: "air",        label: "Air & climate",   short: "Air",   desc: "STARS air/energy & climate, normalized to % of possible (two STARS versions)." },
@@ -102,8 +102,8 @@ const RAW = {
 };
 
 const SOURCES = [
-  { label: "UC Office of the President — Annual Sustainability Report (2025)", url: "https://sustainabilityreport.ucop.edu/2025/policy-progress/" },
-  { label: "UCOP — Sustainability rankings, ratings & awards (FY 2024–25)", url: "https://www.ucop.edu/sustainability/_files/2024-25-fy-sustainability-rankings-ratings-and-awards.pdf" },
+  { label: "UC Office of the President: Annual Sustainability Report (2025)", url: "https://sustainabilityreport.ucop.edu/2025/policy-progress/" },
+  { label: "UCOP: Sustainability rankings, ratings & awards (FY 2024 to 2025)", url: "https://www.ucop.edu/sustainability/_files/2024-25-fy-sustainability-rankings-ratings-and-awards.pdf" },
   { label: "AASHE STARS public campus reports", url: "https://reports.aashe.org/" },
-  { label: "USGBC — Why certify with LEED", url: "https://www.usgbc.org/articles/top-10-reasons-certify-leed" },
+  { label: "USGBC: Why certify with LEED", url: "https://www.usgbc.org/articles/top-10-reasons-certify-leed" },
 ];

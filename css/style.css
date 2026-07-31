@@ -130,20 +130,19 @@ header.hero h1 .ghost { color: rgba(255,255,255,.28); }
 /* ---------- badge logos ---------- */
 .logo-badge {
   display: inline-flex; align-items: center; justify-content: center;
-  width: 28px; height: 28px; flex: 0 0 auto;
-  background: var(--gold); color: var(--navy);
-  border: 2px solid var(--ink); box-shadow: 2px 2px 0 var(--ink);
-  margin-right: 8px; vertical-align: -8px;
+  width: 18px; height: 18px; flex: 0 0 18px;
+  background: transparent;
+  border: 0; box-shadow: none;
+  margin-right: 5px; vertical-align: -3px;
 }
-.logo-badge svg { width: 68%; height: 68%; }
-.logo-badge.logo-lg { width: 44px; height: 44px; border-width: var(--bw); box-shadow: var(--shadow-sm); vertical-align: -14px; margin-right: 12px; }
-.logo-badge.logo-sm { width: 20px; height: 20px; border-width: 2px; box-shadow: 1px 1px 0 var(--ink); vertical-align: -5px; margin-right: 6px; }
-.homechip .logo-badge, .pcard .logo-badge { background: var(--navy); color: var(--gold); }
+.logo-badge img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.logo-badge.logo-lg { width: 28px; height: 28px; flex-basis: 28px; vertical-align: -7px; margin-right: 8px; }
+.logo-badge.logo-sm { width: 18px; height: 18px; flex-basis: 18px; vertical-align: -4px; margin-right: 5px; }
 .campus-mention { display: inline-flex; align-items: center; white-space: nowrap; vertical-align: middle; }
 .campus-mention .logo-badge { vertical-align: middle; margin-right: 5px; }
-.eyebrow .campus-mention .logo-badge { width: 18px; height: 18px; box-shadow: 1px 1px 0 var(--ink); }
+.eyebrow .campus-mention .logo-badge { width: 16px; height: 16px; flex-basis: 16px; }
 .dvg .nm .campus-mention { justify-content: flex-end; }
-footer .campus-mention .logo-badge { background: var(--gold); color: var(--navy); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
 /* ---------- rivalry / editorial section ---------- */
 .rivalry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 20px; margin-top: 32px; }
@@ -446,9 +445,19 @@ header.hero h1 .ghost { color: var(--navy); font-style: normal; }
 .pillar .k { color: var(--faint); font-family: "Libre Franklin"; }
 .pillar .v, .pillar.q .v { color: var(--ink); font-size: 1.45rem; }
 .pillar .d { color: var(--muted); font-family: Georgia, serif; }
+.pillar small { display: block; margin-top: 6px; color: var(--faint); font: 600 .67rem "Libre Franklin", sans-serif; text-transform: uppercase; letter-spacing: .05em; }
+.coverage { height: 5px; margin-top: 15px; background: var(--line); overflow: hidden; }
+.coverage span { display: block; width: var(--coverage); height: 100%; background: var(--pc, var(--gold)); }
+.pillar.q .coverage span { background: var(--gold-dark); }
 
 section { padding: clamp(66px, 8vw, 108px) 0; }
 section.alt { background: rgba(251,249,242,.74); border-block: 1px solid var(--ink); }
+.premise-intro { display: grid; grid-template-columns: minmax(0, .8fr) minmax(320px, 1.2fr); gap: clamp(30px, 6vw, 72px); align-items: start; margin-bottom: 38px; }
+.ranking-origin { border-left: 5px solid var(--gold); padding: 4px 0 4px 24px; }
+.ranking-origin .year { color: var(--navy-2); font: 700 2.4rem/1 "Libre Franklin", sans-serif; }
+.ranking-origin h3 { margin: 7px 0 12px; font-size: 1.35rem; }
+.ranking-origin p:not(.year) { color: var(--muted); font-family: Georgia, serif; line-height: 1.62; margin-bottom: 12px; }
+.ranking-origin a { font: 600 .84rem "Libre Franklin", sans-serif; }
 .rivalry-grid, .cards { gap: 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
 .rcard, .card {
   background: transparent;
@@ -532,6 +541,7 @@ footer .gold { color: var(--gold-dark); }
   .dq { margin-top: 30px; padding: 22px 0 0; border-left: 0; border-top: 1px solid var(--ink); }
   .pillars { grid-template-columns: 1fr 1fr; }
   .pillar:nth-child(2) { border-right: 0; }
+  .premise-intro { grid-template-columns: 1fr; }
   .rivalry-grid, .cards { grid-template-columns: 1fr; }
   .rcard, .card { border-right: 0; border-bottom: 1px solid var(--line); }
 }
