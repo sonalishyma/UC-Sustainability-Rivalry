@@ -2,15 +2,15 @@
    Files are supplied in the local `uc logos` folder. */
 
 const LOGOS = {
-  UCSD: "uc%20logos/ucsd.png",
-  UCLA: "uc%20logos/ucla.png",
-  UCB: "uc%20logos/ucb.png",
-  UCM: "uc%20logos/ucm.png",
-  UCD: "uc%20logos/ucd.png",
-  UCSB: "uc%20logos/ucsb.png",
-  UCSC: "uc%20logos/ucsc.png",
-  UCI: "uc%20logos/uci.png",
-  UCR: "uc%20logos/ucr.png",
+  UCSD: "assets/logos/ucsd.png",
+  UCLA: "assets/logos/ucla.png",
+  UCB: "assets/logos/ucb.png",
+  UCM: "assets/logos/ucm.png",
+  UCD: "assets/logos/ucd.png",
+  UCSB: "assets/logos/ucsb.png",
+  UCSC: "assets/logos/ucsc.png",
+  UCI: "assets/logos/uci.png",
+  UCR: "assets/logos/ucr.png",
 };
 
 function badgeHTML(key, size) {
