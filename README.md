@@ -2,6 +2,10 @@
 
 **Live site:** https://sonalishyma.github.io/UC-Sustainability-Rivalry/ 
 
+## Project Preview
+
+![UC Sustainability Rivalry rankings dashboard](./SS1.png)
+
 UC campuses compete over everything: U.S. News rank, rivalry games, Nobel counts,
 admit rates. Nobody ranks them on sustainability — so Team 3 did. Nine of the ten
 UC campuses (every campus with an undergraduate class; UCSF is health-sciences-only
