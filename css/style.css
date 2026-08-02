@@ -469,7 +469,7 @@ section.alt { background: rgba(251,249,242,.74); border-block: 1px solid var(--i
 .rcard.blank { background: rgba(255,205,0,.08); border-top: 4px solid var(--gold); }
 .rcard h3, .card h3 { font-size: 1.42rem; line-height: 1.05; margin-bottom: 12px; }
 .rcard p, .card p { font-family: Georgia, serif; line-height: 1.6; color: var(--muted); }
-.pull { border: 0; border-block: 4px double var(--ink); background: none; box-shadow: none; font: 700 2rem/1.18 "Libre Franklin", sans-serif; letter-spacing: -.03em; padding: 24px 7%; text-align: center; }
+.pull { border: 0; border-block: 4px double var(--ink); background: none; box-shadow: none; font: 700 2rem/1.18 "Libre Franklin", sans-serif; letter-spacing: -.03em; margin: 40px auto 10px; padding: 24px 7%; text-align: center; }
 
 .podium { max-width: none; gap: 0; border-block: 1px solid var(--ink); }
 .pcard, .pcard.win { background: transparent; border: 0; border-right: 1px solid var(--line); padding: 22px; box-shadow: none; }
