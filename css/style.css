@@ -121,11 +121,7 @@ header.hero h1 .ghost { color: rgba(255,255,255,.28); }
   background: var(--navy-2); border: var(--bw) solid var(--ink);
   box-shadow: var(--shadow); padding: 18px 18px 16px; border-top: 6px solid var(--pc, #fff);
 }
-.pillar .k { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.65); }
-.pillar .v { font-family: "Archivo Black"; font-size: 1.3rem; margin: 6px 0 4px; color: #fff; }
-.pillar .d { font-size: .86rem; color: rgba(255,255,255,.7); }
 .pillar.q { border-top-color: var(--gold); background: var(--navy-3); }
-.pillar.q .v { color: var(--gold); }
 
 /* ---------- badge logos ---------- */
 .logo-badge {
@@ -328,7 +324,7 @@ body {
 }
 
 .wrap { max-width: 1240px; padding-inline: clamp(20px, 4vw, 54px); }
-h1, h2, h3, .blackface, .pillar .v, .pcard .who, .profile h3, .bignum .num {
+h1, h2, h3, .blackface, .pcard .who, .profile h3, .bignum .num {
   font-family: "Libre Franklin", "DM Sans", sans-serif;
   font-weight: 700;
   color: var(--ink);
@@ -420,8 +416,8 @@ header.hero h1 .gold {
   text-underline-offset: .08em;
 }
 header.hero h1 .ghost { color: var(--navy); font-style: normal; }
+.hero-aside { align-self: start; }
 .dq {
-  align-self: stretch;
   margin: 0;
   padding: 0 0 0 26px;
   border: 0;
@@ -431,25 +427,26 @@ header.hero h1 .ghost { color: var(--navy); font-style: normal; }
   font: 1.04rem/1.72 Georgia, serif;
 }
 .dq::first-letter { float: left; font: 700 4.5rem/.72 "Libre Franklin", sans-serif; color: var(--navy-2); padding: 8px 8px 0 0; }
-.pillars { grid-column: 1 / -1; margin-top: 38px; max-width: none; gap: 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
-.pillar {
-  background: none;
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+  margin-top: 20px;
+  max-width: 360px;
   border: 0;
-  border-right: 1px solid var(--line);
-  border-top: 4px solid var(--pc);
-  padding: 15px 18px 18px;
-  box-shadow: none;
 }
-.pillar:last-child { border-right: 0; }
-.pillar.q { background: rgba(255,205,0,.09); border-top: 4px solid var(--gold); }
-.pillar .k { color: var(--faint); font-family: "Libre Franklin"; }
-.pillar .v, .pillar.q .v { color: var(--ink); font-size: 1.45rem; }
-.pillar .d { color: var(--muted); font-family: Georgia, serif; }
-.pillar small { display: block; margin-top: 6px; color: var(--faint); font: 600 .67rem "Libre Franklin", sans-serif; text-transform: uppercase; letter-spacing: .05em; }
-.coverage { height: 5px; margin-top: 15px; background: var(--line); overflow: hidden; }
-.coverage span { display: block; width: var(--coverage); height: 100%; background: var(--pc, var(--gold)); }
-.pillar.q .coverage span { background: var(--gold-dark); }
-
+.pillar {
+  background: rgba(0, 98, 155, .045);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--pc);
+  padding: 8px 10px;
+  box-shadow: none;
+  color: var(--muted);
+  font: 700 .62rem/1 "Libre Franklin", sans-serif;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.pillar.q { background: rgba(255,205,0,.09); border-left-color: var(--gold-dark); color: var(--ink); }
 section { padding: clamp(66px, 8vw, 108px) 0; }
 section.alt { background: rgba(251,249,242,.74); border-block: 1px solid var(--ink); }
 .premise-intro { display: grid; grid-template-columns: minmax(0, .8fr) minmax(320px, 1.2fr); gap: clamp(30px, 6vw, 72px); align-items: start; margin-bottom: 38px; }
@@ -538,17 +535,15 @@ footer .gold { color: var(--gold-dark); }
   nav .links { justify-content: flex-start; }
   header.hero .wrap { grid-template-columns: 1fr; }
   header.hero h1 { font-size: clamp(3rem, 17vw, 5.2rem); }
-  .dq { margin-top: 30px; padding: 22px 0 0; border-left: 0; border-top: 1px solid var(--ink); }
-  .pillars { grid-template-columns: 1fr 1fr; }
-  .pillar:nth-child(2) { border-right: 0; }
+  .hero-aside { margin-top: 30px; }
+  .dq { padding: 22px 0 0; border-left: 0; border-top: 1px solid var(--ink); }
   .premise-intro { grid-template-columns: 1fr; }
   .rivalry-grid, .cards { grid-template-columns: 1fr; }
   .rcard, .card { border-right: 0; border-bottom: 1px solid var(--line); }
 }
 
 @media (max-width: 520px) {
-  .pillars { grid-template-columns: 1fr; }
-  .pillar { border-right: 0; }
+  .pillars { grid-template-columns: 1fr 1fr; }
   .toggle { display: flex; width: 100%; overflow-x: auto; }
   .toggle button { flex: 1 0 auto; padding-inline: 12px; }
 }
