@@ -45,5 +45,6 @@ Settings → Pages → Deploy from a branch → `main`, `/ (root)`. The site is 
 ## Credits
 
 Team 3 — Sonali S., Rowan N., Raphael P. & Olivia P. (SYN 100, UC San Diego
-Synthesis Program). Interactive redesign, narrative framing & data pipeline:
-Sonali Singh, built from the team's original research dataset.
+Synthesis Program). Project management, data-collection standards, team
+training, presentation direction, interactive ranking build, and data pipeline:
+Sonali Singh. Built from the team's original research dataset.
